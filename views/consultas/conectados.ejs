@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectados</title>
+    <link rel="stylesheet" type="text/css" href="stylesheets/conectados.css">
+
+</head>
+
+<body>
+    <!-- TOP NAVBAR -->
+    <div class="container-navbar">
+        <div class="topnav" id="myTopnav">
+            <a href="" class="left"><i class="fa fa-home"></i><strong> Inicio</strong></a>
+            <a href="" class="left"><i class="fa fa-puzzle-piece"></i><strong> Procesos</strong></a>
+            <div class="dropdown1 left">
+                <button class="dropbtn">
+                <i class="fa fa-search"></i><strong>Consultas</strong>
+                <i class="fa fa-caret-down"></i>
+            </button>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-clock"></i> Tiempos de control</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Monitoreo</a>
+                    <a href="#"><i class="fas fa-map"></i> Recorrido</a>
+                    <a href="#"><i class="fas fa-clock"></i> Asistencias</a>
+                    <a href="#"><i class="fas fa-wifi"></i> Conectados</a>
+                </div>
+            </div>
+            <div class="dropdown1 left">
+                <button class="dropbtn">
+                <i class="fa fa-cog"></i><strong> Configuración</strong>
+                <i class="fa fa-caret-down"></i>
+            </button>
+                <div class="dropdown-content">
+                    <a href="#" id="btnModalInitialConf"><i class="fas fa-paper-plane"></i> Enviar conf. inicial</a>
+                    <a href="#" id="btnModalControlPoints"><i class="fas fa-paper-plane"></i> Enviar ptos. control</a>
+                    <a href="#" id="btnModalReset"><i class="fas fa-sync-alt"></i> Reset</a>
+                    <a href="#" id="btnModalChangeNro"><i class="fas fa-wrench"></i> Cambiar nro. vehiculo</a>
+                    <a href="#"><i class="fas fa-bus"></i> Paraderos</a>
+                    <a href="#" id="btnModalSendStations"><i class="fas fa-paper-plane"></i> Enviar paraderos</a>
+                </div>
+            </div>
+            <div class="dropdown1 right">
+                <button class="dropbtn">
+                    <i class="fas fa-user"></i>
+                    <strong>Admin AB</strong>
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#">Administración</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+                </div>
+            </div>
+            <a href="javascript:void(0);" class="right hour active">
+                <h4 id="box-time"><strong></strong></h4>
+            </a>
+            <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="hamburgerMenu()">&#9776;</a>
+        </div>
+    </div>
+    <!-- CONTENT -->
+    <div class="container">
+        <div class="table-content">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Conectados</h4>
+                    <div class="right-side flex">
+                        <input type="text" name="search" id="searchInput" placeholder="Buscar...">
+                        <div class="custom-select">
+                            <select name="filterBy" id="filterBy">
+                                <option>Imprimir</option>
+                                <option>PDF</option>
+                                <option>Excel</option>
+                            </select>
+                        </div>
+                        <a href=""><i class="fas fa-expand"></i></a>
+                    </div>
+                </div>
+                <div class="card-body scrollTable" style="overflow-x: auto;">
+                    <table id="data-table" class="table-sortable">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="allTable" name="allTable" value="allTable"></th>
+                                <th><span>Nro. Bus</span></th>
+                                <th><span>Hora</span></th>
+                                <th><span>Estado</span></th>
+                                <th><span>Acciones</span></th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>110</td>
+                                <td>5</td>
+                                <td id="hour">20:15</td>
+                                <td>-5</td>
+
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>046</td>
+                                <td>4</td>
+                                <td id="hour">13:25</td>
+                                <td>+9</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>056</td>
+                                <td>2</td>
+                                <td id="hour"></td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>123</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>180</td>
+                                <td>5</td>
+                                <td id="hour">20:45</td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>092</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>045</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>081</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>023</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>045</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                            <tr>
+                                <td><input type="checkbox" name="check"></td>
+                                <td>079</td>
+                                <td>5</td>
+                                <td id="hour"></td>
+                                <td>-5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="form-query">
+            <div class="card">
+                <div class="card-header">
+                    Consultar conectados
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                        <label for="nroBus" class="label-style">Nro. de vehiculo: </label>
+                        <select id="nroVehiculo" name="nroVehiculo" data-dropdown>
+                            <option value="">Seleccione un número</option>
+                            <option value="001">001</option>
+                            <option value="002">002</option>
+                            <option value="003">003</option>
+                            <option value="004">004</option>
+                            <option value="005">005</option>
+                            <option value="007">007</option>
+                            <option value="011">011</option>
+                            <option value="019">019</option>
+                            <option value="023">023</option>
+                            <option value="024">024</option>
+                            <option value="025">025</option>
+                            <option value="036">036</option>
+                            <option value="037">037</option>
+                            <option value="058">058</option>
+                            <option value="040">040</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="input1" class="label-style">Fecha inicial: </label>
+                        <input class="input-style" id="input1" type="date" placeholder="25/08/20">
+                    </div>
+                    <div class="form-group">
+                        <label for="input2" class="label-style">Fecha final: </label>
+                        <input class="input-style" id="input2" type="date" placeholder="25/08/20">
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="button is-info" onclick="document.getElementById('modalVehicleConnected').style.display='none'">                          
+                        <i class="fas fa-search"></i>                           
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/javascripts/conectados.js"></script>
+    <script src="https://kit.fontawesome.com/74ef1d0087.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
